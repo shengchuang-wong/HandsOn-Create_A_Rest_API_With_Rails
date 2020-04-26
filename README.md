@@ -1,3 +1,11 @@
+# Commands
+- `rails new <project_name> --api --database=mysql` (optional -T for Rspec)
+- `rails generate model User username:string password:string`
+- `rails generate model Fact user:references fact:string likes:integer`
+- Go to config/database.yml, update database config
+- `rails db:setup`
+- `rails db:migrate`
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +30,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+#### Troubleshooting
+- If libssl error is presented, try `brew reinstall openssl@1.1`
+This suggestion also solved the issue with the same error
+Mac OSX, with Catalina 10.15.3, running mysql 8.0.19, using Rails 5.2 (for what its worth) and already had openssl 1.1.1d installed with Homebrew.
+
+gem uninstall mysql2
+brew upgrade openssl
+gem install mysql2 -- --with-opt-dir="$(brew --prefix openssl)"
