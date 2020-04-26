@@ -5,6 +5,20 @@
 - Go to config/database.yml, update database config
 - `rails db:setup`
 - `rails db:migrate`
+- `rails g controller api/v1/Users`
+- `rails g controller api/v1/Facts`
+- go to `config/routes.rb`, update routes into
+```ruby
+Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :users do
+        resources :facts
+      end
+    end
+  end
+end
+```
 
 # README
 
