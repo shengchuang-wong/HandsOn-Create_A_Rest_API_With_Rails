@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 end
 ```
+- update both UsersController and FactsController
 
 # README
 
